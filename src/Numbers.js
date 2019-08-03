@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-function Specials() {
-  const [specials, setSpecials] = useState([])
+function Numbers() {
+  const [numbers, setNumbers] = useState([])
 
   useEffect(() => {
     axios
       .get('https://my-json-server.typicode.com/ryanboris/demo-app-aug3/db')
       .then(response => {
-        setSpecials(response.data.specials)
+        setNumbers(response.data.numbers)
       })
       .catch(err => console.error(err))
   }, [])
 
-  console.log('specials', specials)
+  console.log('numbers', numbers)
 
-  return <div>Specials!</div>
+  return <div>Numbers is good!</div>
 }
 
-export default Specials
+export default Numbers

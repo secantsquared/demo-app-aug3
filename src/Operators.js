@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-function Specials() {
-  const [specials, setSpecials] = useState([])
+function Operators() {
+  const [operators, setOperators] = useState([])
 
   useEffect(() => {
     axios
       .get('https://my-json-server.typicode.com/ryanboris/demo-app-aug3/db')
       .then(response => {
-        setSpecials(response.data.specials)
+        setOperators(response.data.operators)
       })
       .catch(err => console.error(err))
   }, [])
 
-  console.log('specials', specials)
+  console.log('operators', operators)
 
-  return <div>Specials!</div>
+  return <div>Operators!</div>
 }
 
-export default Specials
+export default Operators
