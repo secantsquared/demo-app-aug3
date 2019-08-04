@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import Button from './Button'
 
 function Operators() {
   const [operators, setOperators] = useState([])
@@ -15,7 +16,13 @@ function Operators() {
 
   console.log('operators', operators)
 
-  return <div>Operators!</div>
+  return (
+    <div>
+      {operators.map(operator => (
+        <Button key={operator.char} children={operator.value} />
+      ))}
+    </div>
+  )
 }
 
 export default Operators

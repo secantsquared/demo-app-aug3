@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import Button from './Button'
 
 function Numbers() {
   const [numbers, setNumbers] = useState([])
@@ -15,7 +16,13 @@ function Numbers() {
 
   console.log('numbers', numbers)
 
-  return <div>Numbers is good!</div>
+  return (
+    <div>
+      {numbers.map(number => {
+        return <Button key={number} children={number} />
+      })}
+    </div>
+  )
 }
 
 export default Numbers

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import Button from './Button'
 
 function Specials() {
   const [specials, setSpecials] = useState([])
@@ -13,9 +14,13 @@ function Specials() {
       .catch(err => console.error(err))
   }, [])
 
-  console.log('specials', specials)
-
-  return <div>Specials!</div>
+  return (
+    <div>
+      {specials.map(special => (
+        <Button key={special} children={special} />
+      ))}
+    </div>
+  )
 }
 
 export default Specials
